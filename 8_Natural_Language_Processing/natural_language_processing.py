@@ -26,7 +26,11 @@ def main():
         review = review.lower()
         review = review.split()
         ps = PorterStemmer()
-        review = [ps.stem(word) for word in review if not word in set(stopwords.words('english'))]
+        review = [
+            ps.stem(word)
+            for word in review
+            if word not in set(stopwords.words('english'))
+        ]
         review = ' '.join(review)
         corpus.append(review)
 
